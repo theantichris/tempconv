@@ -1,5 +1,7 @@
 package tempconv
 
+import "fmt"
+
 // Celsius holds a Celsius temperature.
 type Celsius float64
 
@@ -14,6 +16,14 @@ const (
 	// BoilingC is the boiling point of water in Celsius.
 	BoilingC Celsius = 100
 )
+
+func (c Celsius) String() string {
+	return fmt.Sprintf("%g°C", c)
+}
+
+func (f Fahrenheit) String() string {
+	return fmt.Sprintf("%g°F", f)
+}
 
 // CToF converts a Celsius temperate to Fahrenheit.
 func CToF(c Celsius) Fahrenheit {

@@ -6,6 +6,32 @@ import (
 	"github.com/theantichris/tempconv"
 )
 
+func TestCelsius(t *testing.T) {
+	t.Run("it prints Celsius in degrees", func(t *testing.T) {
+		c := tempconv.Celsius(32)
+
+		got := c.String()
+		want := "32°C"
+
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	})
+}
+
+func TestFahrenheit(t *testing.T) {
+	t.Run("it prints Fahrenheit in degrees", func(t *testing.T) {
+		c := tempconv.Fahrenheit(32)
+
+		got := c.String()
+		want := "32°F"
+
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	})
+}
+
 func TestCToF(t *testing.T) {
 	t.Run("it converts absolute zero (-273.15) in Celsius to 32 Fahrenheit", func(t *testing.T) {
 		got := tempconv.CToF(tempconv.AbsoluteZeroC)
