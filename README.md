@@ -1,3 +1,3 @@
-# go-template
+# tempconv
 
- A template Go repository.
+ Package tempconv performs Celsius and Fahrenheit temperature computations.
